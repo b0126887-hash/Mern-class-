@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 800px;
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+.left-box {
+    width: 40%;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.right-box {
+    flex: 1;
+    border: 2px solid white;
+    border-radius: 15px;
+}

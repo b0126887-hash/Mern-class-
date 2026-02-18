@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    background-color: #499ad8; /* Light grey background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    text-align: center;
+}
+h1 {
+    font-weight: bold;
+    font-size: 48px;
+    color: #333;
+}
