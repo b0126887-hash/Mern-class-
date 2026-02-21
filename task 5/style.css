@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: black;
 }
 
 .container {
@@ -23,16 +24,19 @@ body {
     border: 2px solid white;
     border-radius: 15px;
     margin-bottom: 10px;
+    border-color: aqua;
 }
 
 .footer {
     margin-top: 10px;
     margin-bottom: 0;
+    border-color: rgb(9, 226, 226);
 }
 
 .main-content {
     display: flex;
     flex: 1;
+    border-color: rgb(236, 25, 25);
 }
 
 .left-box {

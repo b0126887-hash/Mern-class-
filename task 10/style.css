@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 2px solid red;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    bottom: 40px;
+    margin-top: 30px;
+    
+}
+
+.container h1{
+    border: 2px solid red;
+
+}
+h1 {
+    font-weight: bold;
+    font-weight: 700;
+}
