@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-color: #f4f4f4;
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
+}
+.hero-text {
+    max-width: 500px;
+}
+.small-text {
+    font-size: 14px;
+    /*opacity: 0.8;*/
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.primary {
+    background: white;
+    color: #302b63;
+}
+
+.secondary {
+    background: #666;
+    color: white;
+}
+/*.primary {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: #302b63;
+}
+
+.secondary {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: #666;
+    color: white;
+}*/
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Right Image */
+.hero-image img {
+    width: 350px;
+    border-radius: 20px;
+}
+/*body{
+    background-image: url('https://media.istockphoto.com/id/1550071750/photo/green-tea-tree-leaves-camellia-sinensis-in-organic-farm-sunlight-fresh-young-tender-bud.jpg?s=612x612&w=0&k=20&c=RC_xD5DY5qPH_hpqeOY1g1pM6bJgGJSssWYjVIvvoLw=');
+    background-size:cover;
+    background-position: bottom;
+}*/
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*.trianlge-up{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    z-index: 99;
+    border-bottom: 50px solid red ;
+}*/

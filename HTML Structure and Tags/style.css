@@ -1,0 +1,630 @@
+/* ==================== RESET & BASE STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* ==================== HEADER STYLES ==================== */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: slideDown 0.8s ease;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+/* ==================== NAVIGATION STYLES ==================== */
+nav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    animation: fadeIn 1s ease;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==================== MAIN CONTENT ==================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    animation: slideUp 0.8s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+section h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+section h3 {
+    color: #34495e;
+    margin: 15px 0 10px;
+}
+
+/* ==================== TEXT FORMATTING STYLES ==================== */
+b, strong { color: #e74c3c; }
+i, em { color: #3498db; }
+mark {
+    background-color: #f1c40f;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+small { color: #7f8c8d; }
+del { color: #e74c3c; }
+ins {
+    color: #27ae60;
+    background-color: #d4edda;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+code {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+kbd {
+    background-color: #333;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #666;
+}
+blockquote {
+    border-left: 4px solid #4CAF50;
+    padding-left: 15px;
+    margin: 10px 0;
+    color: #555;
+    font-style: italic;
+}
+address {
+    font-style: normal;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+abbr {
+    cursor: help;
+    border-bottom: 1px dotted #333;
+}
+time {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+/* ==================== DIV & SPAN STYLES ==================== */
+.div-container {
+    background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.highlight-red {
+    color: #e74c3c;
+    font-weight: bold;
+    background-color: #fadbd8;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.highlight-blue {
+    color: #2980b9;
+    font-weight: bold;
+    background-color: #d4e6f1;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.highlight-green {
+    color: #27ae60;
+    font-weight: bold;
+    background-color: #d4edda;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.nested-div {
+    background-color: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* ==================== LIST STYLES ==================== */
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.list-box {
+    flex: 1;
+    min-width: 200px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+ul, ol, dl {
+    margin-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+    color: #34495e;
+}
+
+ul li {
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+dt {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    color: #7f8c8d;
+}
+
+/* ==================== TABLE STYLES ==================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 1.2em;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    font-weight: 600;
+}
+
+td {
+    background-color: white;
+}
+
+tr:nth-child(even) td {
+    background-color: #f8f9fa;
+}
+
+tr:hover td {
+    background-color: #e8f5e9;
+}
+
+tfoot td {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
+
+/* ==================== IMAGE GALLERY STYLES ==================== */
+.image-gallery {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+figure:hover {
+    transform: scale(1.05);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* ==================== LINK STYLES ==================== */
+.links-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ==================== FORM STYLES ==================== */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 2px solid #ddd;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+legend {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio-group label {
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+}
+
+button[type="reset"] {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ==================== MULTIMEDIA STYLES ==================== */
+.media-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.media-box {
+    flex: 1;
+    min-width: 300px;
+}
+
+audio, video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ==================== SEMANTIC TAGS STYLES ==================== */
+article {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+    border-left: 4px solid #4CAF50;
+}
+
+aside {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-right: 4px solid #3498db;
+}
+
+details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+summary {
+    font-weight: bold;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+/* ==================== PROGRESS STYLES ==================== */
+.progress-group {
+    margin: 15px 0;
+}
+
+progress, meter {
+    width: 300px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    border-radius: 10px;
+}
+
+/* ==================== FOOTER STYLES ==================== */
+footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    animation: slideUp 0.8s ease;
+}
+
+footer a {
+    color: #4CAF50;
+    background: none;
+    padding: 0;
+}
+
+footer a:hover {
+    background: none;
+    color: #45a049;
+}
+
+address {
+    font-style: normal;
+    margin: 10px 0;
+    color: #ecf0f1;
+}
+
+footer small {
+    color: #bdc3c7;
+    display: block;
+    margin-top: 10px;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .list-container,
+    .image-gallery,
+    .media-container {
+        flex-direction: column;
+    }
+    
+    table {
+        font-size: 14px;
+        overflow-x: auto;
+        display: block;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    progress, meter {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

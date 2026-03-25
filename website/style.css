@@ -1,0 +1,840 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: none;
+}
+
+/* Navigation Bar */
+.navbar {
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky; 
+    top: 0;          
+    z-index: 1000;    
+    background: white; 
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: red;
+}
+
+
+.logo span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.logo small {
+    font-size: 5px;
+    color: black;
+    text-align: end;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: white;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.login-btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+}
+
+.trial-btn {
+    background: #00d4ff;
+    color: #0a2540;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.trial-btn:hover {
+    background: #00c4e8;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    padding: 60px 20px;
+}
+
+.hero-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.hero-content h1 span {
+    color: #00d4ff;
+    display: inline-block;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.demo-btn {
+    background: #00d4ff;
+    color: white;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.demo-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.free-trial-btn {
+    background: transparent;
+    color: black;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+    transition: all 0.3s;
+    
+}
+
+.free-trial-btn:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+/* Image ke wrapper ko style karein */
+.image-wrapper {
+    display: flex;
+    justify-content: center; /* Image ko screen ke center mein horizontal karega */
+    align-items: center;    /* Image ko vertically center karega agar full screen height ho */
+    width: 100%;
+    padding: 20px; /* Thora sa gap edges se */
+}
+
+/* Sabse important CSS: Responsive Image */
+.responsive-image {
+    max-width: 100%; /* Image apni original width se bari na ho (PC par) */
+    height: auto;    /* Height apnay aap adjust hogi taaki image stretch na ho */
+    display: block;  /* Inline default behavior khatam karne ke liye */
+}
+
+/* Choti screen (Mobile) ke liye adjustment */
+@media (max-width: 768px) {
+    .image-wrapper {
+        padding: 10px; /* Mobile par kam gap */
+    }
+
+
+}
+/* Section ki main styling */
+.brand-partnership {
+    padding: 60px 0; /* Upar niche se thori jagah (White space) */
+    background-color: #fff;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px; /* Content ko center mein rakhne ke liye */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Logos ko line mein lane ke liye Flexbox */
+.logo-wrapper {
+    display: flex;
+    justify-content: space-between; /* Logos ke beech barabar gap */
+    align-items: center;
+    flex-wrap: wrap; /* Screen choti hone par niche shift ho jayenge */
+    gap: 30px; /* Logos ke darmayan ka distance */
+}
+
+/* Har logo box ki styling */
+.logo-box {
+    flex: 1; 
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-box img {
+    max-width: 140px; /* Sab logos ka size ek jaisa rakhne ke liye */
+    height: auto;
+    filter: grayscale(100%); /* Image ki tarah grey effect */
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+/* Hover par color wapis laane ke liye */
+.logo-box img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1); /* Thora sa zoom effect */
+}
+
+/* Mobile Responsive: Choti screen par 3 ya 2 logos ek line mein */
+@media (max-width: 768px) {
+    .logo-box {
+        flex: 1 1 30%; 
+    }
+}
+
+
+
+
+/* Section ki styling */
+.hero-text-section {
+    padding: 80px 20px; /* Upar-niche aur sides se jagah */
+    background-color: #ffffff; /* Safaid background */
+    text-align: center; /* Text ko center karne ke liye */
+    font-family: 'Arial', sans-serif; /* Aap koi bhi font use kar sakte hain */
+}
+
+.content-container {
+    max-width: px; /* Text ko bohot zyada phailne se rokne ke liye */
+    margin: 0 auto; /* Pure container ko center karne ke liye */
+}
+
+/* Heading ki styling */
+.hero-text-section h1 {
+    font-size: 40px;/* Bada size image ki tarah */
+    color: #002b3d; /* Dark blue/black color jo image mein hai */
+    font-weight: 800; /* Bold text */
+    margin-bottom: 25px; /* Paragraph se thori jagah */
+    line-height: 1.2;
+}
+
+/* Paragraph ki styling */
+.hero-text-section p {
+    font-size: 18px;
+    color: #333; /* Thora light dark color */
+    line-height: 1.6; /* Lines ke beech ka gap */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-text-section h1 {
+        font-size: 32px; /* Choti screen par text thora chota ho jayega */
+    }
+    .hero-text-section p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+/* .features-section*/
+.features-section {
+    padding: 80px 0;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 50px; /* Side blocks ke darmiyan gap */
+    padding: 0 20px;
+}
+
+/* Accordion Side */
+.accordion-side {
+    flex: 1;
+}
+
+details {
+    border-bottom: 1px solid #eee; /* Light line niche */
+    padding: 25px 0;
+    cursor: pointer;
+}
+
+summary {
+    list-style: none; /* Default arrow hatane ke liye */
+    font-size: 28px;
+    font-weight: 700;
+    color: #002b3d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Arrow icon (Chota v shape) */
+summary::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-right: 3px solid #002b3d;
+    border-bottom: 3px solid #002b3d;
+    transform: rotate(45deg);
+    transition: 0.3s;
+}
+
+/* Jab khula ho to arrow upar ho jaye */
+details[open] summary::after {
+    transform: rotate(-135deg);
+}
+
+/* Image Side */
+.image-side {
+    flex: 1.2;
+}
+
+.image-side img {
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        text-align: left;
+    }
+    summary {
+        font-size: 22px;
+    }
+}
+
+
+
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    color: #002b3d; /* Dark blue color from the image */
+}
+
+.hootsuite-stats {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* Flexbox Layout */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Vertical line effect except for the last one */
+    border-right: 1px solid #e0e0e0;
+}
+
+.stat-card:last-child {
+    border-right: none;
+}
+
+/* Number Styling */
+.stat-number {
+    font-size: 60px;
+    color: #d33b33; /* Red color from image */
+    margin: 0 0 20px 0;
+}
+
+/* Text Styling */
+.stat-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    max-width: 320px;
+}
+
+/* Logo Management */
+.logo-container {
+    margin-top: auto; /* Pushes logo to the bottom */
+}
+
+.logo-container img {
+    max-height: 50px;
+    width: auto;
+    filter: grayscale(100%); /* Keeps logos professional */
+    opacity: 0.7;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .stat-card {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 40px;
+    }
+    .stat-card:last-child {
+        border-bottom: none;
+    }
+}
+
+
+
+
+
+/* Background styling for the whole section */
+.trend-report-section {
+    background-color: #f3f6f8; /* Light grey background */
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Container */
+.report-container {
+    background-color: transparent;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Image Side */
+.report-image {
+    flex: 1;
+}
+
+.report-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px; /* Rounded corners as seen in image */
+    display: block;
+}
+
+/* Content Side */
+.report-content {
+    flex: 1;
+    color: #002b3d; /* Dark blue shade */
+}
+
+.report-title {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.report-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #334e5c;
+}
+
+/* Button Styling */
+.report-button {
+    display: inline-block;
+    background-color: #002b3d;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.report-button:hover {
+    background-color: #00425a;
+}
+
+/* Responsive for Tablets and Mobile */
+@media (max-width: 900px) {
+    .report-container {
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .report-title {
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+
+
+
+/*social info section*/
+.social-info-section {
+    padding: 60px 20px;
+    text-align: center; /* Saara text center karne ke liye */
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+.content-wrapper {
+    max-width: 800px; /* Text ki width control karne ke liye */
+    margin: 0 auto;
+}
+
+.main-heading {
+    font-size: 40px;
+    font-weight: 800;
+    color: #002b3d; /* Dark Navy color */
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.sub-text {
+    font-size: 20px;
+    color: #002b3d;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+    .main-heading {
+        font-size: 32px;
+    }
+    .sub-text {
+        font-size: 16px;
+    }
+}
+
+
+
+
+/*boost section*/
+.boost-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.boost-container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Image aur text ke beech ka gap */
+}
+
+/* Visual Side (Left) */
+.boost-visual {
+    flex: 1.2; /* Image ko thoda zyada space dene ke liye */
+}
+
+.boost-visual img {
+    width: 100%;
+    height: auto;
+    /* Optional: Box shadow to make it look like the original screenshot */
+    filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.05));
+}
+
+/* Content Side (Right) */
+.boost-content {
+    flex: 1;
+    color: #002b3d; /* Dark Navy color */
+}
+
+.boost-title {
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.boost-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #002b3d;
+}
+
+/* Learn More Link */
+.boost-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #002b3d;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 0.3s;
+}
+
+.boost-link:hover {
+    opacity: 0.7;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 992px) {
+    .boost-container {
+        flex-direction: column; /* Mobile par image upar text niche */
+        text-align: left;
+        gap: 40px;
+    }
+    
+    .boost-title {
+        font-size: 32px;
+    }
+}
+
+
+
+
+
+
+/* Section Styles */
+.respond-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.respond-container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 80px; /* Text aur image ke beech ka space */
+}
+
+/* Content Side (Left) */
+.respond-content {
+    flex: 1;
+    color: #002b3d; /* Dark navy color */
+}
+
+.respond-title {
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.respond-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #002b3d;
+}
+
+/* Link Style */
+.respond-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #002b3d;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    transition: opacity 0.3s;
+}
+
+.respond-link:hover {
+    opacity: 0.7;
+}
+
+/* Visual Side (Right) */
+.respond-visual {
+    flex: 1.2;
+}
+
+.respond-visual img {
+    width: 100%;
+    height: auto;
+    /* Soft shadow for depth */
+    filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.08));
+}
+
+/* Responsive for Tablets and Mobile */
+@media (max-width: 992px) {
+    .respond-container {
+        flex-direction: column-reverse; /* Mobile par image upar dikhegi */
+        text-align: left;
+    }
+
+    .respond-title {
+        font-size: 34px;
+    }
+
+    .respond-container {
+        gap: 40px;
+    }
+}
+   
+
+
+
+/* viral section */
+.viral-trends-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.trends-container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Space between visual and text */
+}
+
+/* Visual Side (Left) */
+.trends-visual {
+    flex: 1.2;
+}
+
+.trends-visual img {
+    width: 100%;
+    height: auto;
+    /* Image ko shadow dene ke liye soft look */
+    filter: drop-shadow(0px 15px 40px rgba(0,0,0,0.06));
+}
+
+/* Content Side (Right) */
+.trends-content {
+    flex: 1;
+    color: #002b3d; /* Original Dark Navy color */
+}
+
+.trends-title {
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.trends-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #334e5c; /* Slightly lighter navy for description */
+}
+
+/* Learn More Link */
+.trends-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #002b3d;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    transition: color 0.3s ease;
+}
+
+.trends-link:hover {
+    color: #d33b33; /* Hover par red color (Hootsuite style) */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .trends-container {
+        flex-direction: column; /* Mobile par image upar, text niche */
+        text-align: left;
+        gap: 40px;
+    }
+    .trends-title {
+        font-size: 32px;
+    }
+}
+
+
+
+

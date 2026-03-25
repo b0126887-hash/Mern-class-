@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: black;
 }
 
 .container {
@@ -18,31 +19,35 @@ body {
     overflow: hidden;
 }
 
-.header {
-    height: 80px;
-    border: 2px lightcoral;
+.header, .footer {
+    height: 60px;
+    border: 2px solid white;
     border-radius: 15px;
     margin-bottom: 10px;
-    background-color: lightgoldenrodyellow;
+    border-color: aqua;
+}
+
+.footer {
+    margin-top: 10px;
+    margin-bottom: 0;
+    border-color: rgb(9, 226, 226);
 }
 
 .main-content {
     display: flex;
     flex: 1;
+    border-color: rgb(236, 25, 25);
 }
 
 .left-box {
-    width: 20%;
-    border: 2px lightcoral;
+    width: 40%;
+    border: 2px solid white;
     border-radius: 15px;
     margin-right: 10px;
-    flex: 1;
-    background-color:lightgoldenrodyellow
 }
 
 .right-box {
     flex: 1;
-    border: 2px lightcoral;
+    border: 2px solid white;
     border-radius: 15px;
-    background-color: lightgoldenrodyellow;
 }

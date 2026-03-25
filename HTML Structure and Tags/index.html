@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete HTML Structure with 30+ Tags">
+    <meta name="keywords" content="HTML, Tags, Structure, Web Development">
+    <meta name="author" content="Your Name">
+    
+    <title>HTML Structure - 30+ Tags Demo</title>
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Link to favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- JavaScript -->
+    <script>
+        function showMessage() {
+            alert('Welcome to HTML Structure Demo!');
+        }
+    </script>
+</head>
+
+<body onload="showMessage()">
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <h1>📚 HTML Structure with 30+ Tags</h1>
+        <p>This page demonstrates 30+ HTML tags including Header, Body, Images, Div, Table and more!</p>
+    </header>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#text">Text</a>
+        <a href="#lists">Lists</a>
+        <a href="#table">Table</a>
+        <a href="#images">Images</a>
+        <a href="#forms">Forms</a>
+        <a href="#media">Media</a>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+        <!-- SECTION 1: Heading Tags -->
+        <section id="headings">
+            <h2>📝 Heading Tags (h1 to h6)</h2>
+            <h1>This is Heading 1</h1>
+            <h2>This is Heading 2</h2>
+            <h3>This is Heading 3</h3>
+            <h4>This is Heading 4</h4>
+            <h5>This is Heading 5</h5>
+            <h6>This is Heading 6</h6>
+        </section>
+
+        <!-- SECTION 2: Text Formatting Tags -->
+        <section id="text">
+            <h2>✏️ Text Formatting Tags</h2>
+            
+            <p><b>This is bold text</b> using &lt;b&gt; tag</p>
+            <p><strong>This is strong text</strong> using &lt;strong&gt; tag</p>
+            <p><i>This is italic text</i> using &lt;i&gt; tag</p>
+            <p><em>This is emphasized text</em> using &lt;em&gt; tag</p>
+            <p><u>This is underlined text</u> using &lt;u&gt; tag</p>
+            <p><mark>This is highlighted text</mark> using &lt;mark&gt; tag</p>
+            <p><small>This is small text</small> using &lt;small&gt; tag</p>
+            <p><del>This is deleted text</del> using &lt;del&gt; tag</p>
+            <p><ins>This is inserted text</ins> using &lt;ins&gt; tag</p>
+            <p>H<sub>2</sub>O uses &lt;sub&gt; tag</p>
+            <p>10<sup>2</sup> = 100 uses &lt;sup&gt; tag</p>
+            <p><code>This is code text</code> using &lt;code&gt; tag</p>
+            <p><kbd>Ctrl + C</kbd> uses &lt;kbd&gt; tag</p>
+            <p><q>This is a short quote</q> using &lt;q&gt; tag</p>
+            <blockquote>This is a long blockquote using &lt;blockquote&gt; tag</blockquote>
+            <address>Address: Street, City, Country using &lt;address&gt; tag</address>
+            <p><abbr title="HyperText Markup Language">HTML</abbr> uses &lt;abbr&gt; tag</p>
+            <p><time datetime="2026-03-17">March 17, 2026</time> uses &lt;time&gt; tag</p>
+        </section>
+
+        <!-- SECTION 3: DIV and SPAN Tags -->
+        <section id="div-span">
+            <h2>📦 Div and Span Tags</h2>
+            
+            <div class="div-container">
+                <h3>This is a DIV container</h3>
+                <p>Div is a <span class="highlight-red">block-level</span> element.</p>
+                
+                <div class="nested-div">
+                    <p>This is a <span class="highlight-blue">nested div</span> inside parent div.</p>
+                </div>
+                
+                <p>This text contains <span class="highlight-green">span tag</span> which is inline.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: List Tags -->
+        <section id="lists">
+            <h2>📋 List Tags</h2>
+            
+            <div class="list-container">
+                <div class="list-box">
+                    <h3>Unordered List (&lt;ul&gt;)</h3>
+                    <ul>
+                        <li>Apple</li>
+                        <li>Mango</li>
+                        <li>Banana</li>
+                        <li>Orange</li>
+                    </ul>
+                </div>
+                
+                <div class="list-box">
+                    <h3>Ordered List (&lt;ol&gt;)</h3>
+                    <ol>
+                        <li>First Item</li>
+                        <li>Second Item</li>
+                        <li>Third Item</li>
+                        <li>Fourth Item</li>
+                    </ol>
+                </div>
+                
+                <div class="list-box">
+                    <h3>Description List (&lt;dl&gt;)</h3>
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>HyperText Markup Language</dd>
+                        <dt>CSS</dt>
+                        <dd>Cascading Style Sheets</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Table Tags -->
+        <section id="table">
+            <h2>📊 Table Tags</h2>
+            
+            <table>
+                <caption>Student Marks Table</caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Ali Ahmed</td>
+                        <td>Mathematics</td>
+                        <td>85</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Sara Khan</td>
+                        <td>Physics</td>
+                        <td>92</td>
+                        <td>A+</td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Bilal Ali</td>
+                        <td>Chemistry</td>
+                        <td>78</td>
+                        <td>B+</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total Students</td>
+                        <td>3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- SECTION 6: Image Tags -->
+        <section id="images">
+            <h2>🖼️ Image Tags</h2>
+            
+            <div class="image-gallery">
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/4CAF50/ffffff?text=Image+1" 
+                         alt="Placeholder Image 1" 
+                         width="200" 
+                         height="150">
+                    <figcaption>Figure 1: Green Image</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/2196F3/ffffff?text=Image+2" 
+                         alt="Placeholder Image 2" 
+                         width="200" 
+                         height="150">
+                    <figcaption>Figure 2: Blue Image</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="https://via.placeholder.com/200x150/FF9800/ffffff?text=Image+3" 
+                         alt="Placeholder Image 3" 
+                         width="200" 
+                         height="150">
+                    <figcaption>Figure 3: Orange Image</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Link Tags -->
+        <section id="links">
+            <h2>🔗 Link Tags</h2>
+            
+            <div class="links-container">
+                <a href="https://www.google.com" target="_blank">Google (new tab)</a>
+                <a href="#top">Go to Top</a>
+                <a href="mailto:info@example.com">Send Email</a>
+                <a href="tel:+1234567890">Call Us</a>
+            </div>
+        </section>
+
+        <!-- SECTION 8: Form Tags -->
+        <section id="forms">
+            <h2>📝 Form Tags</h2>
+            
+            <form action="/submit" method="POST">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <select id="country" name="country">
+                            <option value="pk">Pakistan</option>
+                            <option value="in">India</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- SECTION 9: Multimedia Tags -->
+        <section id="media">
+            <h2>🎵 Multimedia Tags</h2>
+            
+            <div class="media-container">
+                <div class="media-box">
+                    <h3>Audio Player</h3>
+                    <audio controls>
+                        <source src="sample.mp3" type="audio/mpeg">
+                        Your browser does not support audio tag.
+                    </audio>
+                </div>
+                
+                <div class="media-box">
+                    <h3>Video Player</h3>
+                    <video width="320" height="240" controls>
+                        <source src="sample.mp4" type="video/mp4">
+                        Your browser does not support video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: Semantic Tags -->
+        <section id="semantic">
+            <h2>🏷️ Semantic Tags</h2>
+            
+            <article>
+                <h3>Article Tag</h3>
+                <p>This is an article about HTML. Article tag is used for independent content.</p>
+            </article>
+            
+            <aside>
+                <h4>Aside Tag</h4>
+                <p>This is sidebar content. Aside is used for related information.</p>
+            </aside>
+            
+            <details>
+                <summary>Details Tag (Click to expand)</summary>
+                <p>This is additional information that can be shown or hidden.</p>
+            </details>
+        </section>
+
+        <!-- SECTION 11: Progress and Meter -->
+        <section id="progress">
+            <h2>📊 Progress and Meter</h2>
+            
+            <div class="progress-group">
+                <label>Progress:</label>
+                <progress value="70" max="100"></progress> 70%
+            </div>
+            
+            <div class="progress-group">
+                <label>Disk Usage:</label>
+                <meter value="0.6" min="0" max="1"></meter> 60%
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>&copy; 2026 HTML Structure Demo. All rights reserved.</p>
+        
+        <address>
+            Written by: Your Name<br>
+            Email: <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+        
+        <p>Last updated: <time datetime="2026-03-17">March 17, 2026</time></p>
+        <small>This page demonstrates 30+ HTML tags.</small>
+    </footer>
+</body>
+</html>

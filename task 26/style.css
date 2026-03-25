@@ -1,0 +1,48 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    background: #eee;
+    height: 100%;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70vh 30vh;
+    height: 100vh;
+    gap: 2px;
+   
+}
+/* Common box style */
+.box{
+   border: 4px solid rgb(49, 214, 112);
+   background-color: #d3d3d3;
+   position: relative;
+   
+}
+/* Top boxes */
+.top-left {
+   border-top: 4px solid red
+}
+.top-right{
+    border: 5px solid red;
+}
+/* Bottom boxes */
+.bottom-left{
+    border-bottom: 4px solid green;
+}.bottom-right{
+    border: 5px solid red;
+}
+
+/* Inner orange box */
+.inner-box {
+    width: 80%;
+    height: 80%;
+    border: 4px solid orange;
+    position: absolute;
+    top: 80px;
+    left: 20%;
+    }
+
