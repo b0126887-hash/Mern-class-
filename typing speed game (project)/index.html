@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Fall - Typing Game</title>
+    <style>
+        body {
+            margin: 0;
+            background: #0f0c29;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            text-align: center;
+        }
+        #game-container {
+            position: relative;
+            width: 100vw;
+            height: 80vh;
+            border-bottom: 2px solid #ff0044;
+        }
+        .word {
+            position: absolute;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+            transition: color 0.3s ease;
+        }
+        .highlight {
+            color: #00aaff;
+        }
+        #ui {
+            padding: 20px;
+            background: #1a1a2e;
+        }
+        input {
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            width: 300px;
+            outline: none;
+        }
+        .stats {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="ui">
+    <div class="stats">
+        Score: <span id="score">0</span> | 
+        Missed: <span id="missed">0</span> | 
+        Time: <span id="time">60</span>s
+    </div>
+    <input type="text" id="type-box" placeholder="Type falling words here..." autofocus>
+</div>
+
+<div id="game-container"></div>
+<script>
+// Game ke zaroori elements ko HTML se select karna
+const container = document.getElementById('game-container'); // Jaha words girenge
+const input = document.getElementById('type-box');       // Jaha player type karega
+const scoreElement = document.getElementById('score');    // Score dikhane ke liye
+const missedElement = document.getElementById('missed'); // Kitne words miss hue
+const timeElement = document.getElementById('time');      // Timer dikhane ke liye
+
+// Game mein istemal hone wale words ki list
+const wordsList = ["ipad", "cold", "python", "yes", "did", "sleep", "call", "react", "html", "pen", "logic", "school"];
+
+// Game ki initial state (shuruati halat)
+let fallingWords = []; // Screen par maujood words ka record rakhne ke liye array
+let score = 0;         // Shuruati score
+let missed = 0;        // Shuruati missed count
+let gameSpeed = 1;     // Words ke girne ki raftar
+let timeLeft = 60;     // Game ka kul waqt (60 seconds)
+let gameRunning = true; // Game chal raha hai ya nahi
+
+// Naya word banane ka function
+function createWord() {
+    if (!gameRunning) return; // Agar game khatam ho gaya to naya word mat banao
+
+    // List mein se koi bhi ek random word chunna
+    const wordText = wordsList[Math.floor(Math.random() * wordsList.length)];
+
+    // Word ke liye ek naya 'div' element banana
+    const wordDiv = document.createElement('div');
+    wordDiv.className = 'word'; // CSS class apply karna
+    wordDiv.innerText = wordText; // Div ke andar word likhna
+
+    // Word ko screen par random left-to-right jagah par set karna
+    const xPos = Math.random() * (window.innerWidth - 100);
+    wordDiv.style.left = xPos + 'px'; // Horizontal position set karna
+    wordDiv.style.top = '0px';        // Shuruat bilkul upar se hogi
+
+    container.appendChild(wordDiv); // Word ko game screen (container) mein shamil karna
+    
+    // Array mein word ki details save karna taaki track rakha ja sake
+    fallingWords.push({ element: wordDiv, text: wordText, y: 0 });
+}
+
+// Game ko update karne ka loop (Animation loop)
+function updateGame() {
+    if (!gameRunning) return; // Agar game ruk gaya hai to update mat karo
+
+    for (let i = 0; i < fallingWords.length; i++) {
+        let obj = fallingWords[i];
+
+        // Word ki 'y' position (niche girne ki jagah) ko badhana
+        obj.y += gameSpeed;
+        obj.element.style.top = obj.y + 'px';
+
+        // 🔴 Khatre ki nishani (Near miss)
+        // Agar word screen ke 60% se niche chala jaye to rang laal kar do
+        if (obj.y > window.innerHeight * 0.6) {
+            obj.element.style.color = "red";
+            obj.element.style.textShadow = "0 0 10px red";
+        }
+
+        // ❌ Word Miss ho gaya
+        // Agar word 75% se niche nikal jaye to use khatam kar do
+        if (obj.y > window.innerHeight * 0.75) {
+            container.removeChild(obj.element); // Screen se hatao
+            fallingWords.splice(i, 1);          // List se hatao
+            missed++;                           // Missed count badhao
+            missedElement.innerText = missed;   // Screen par update karo
+            i--; // Loop index set karna taaki agla word skip na ho
+        }
+    }
+
+    // Is function ko baar baar chalana taaki animation smooth rahe
+    requestAnimationFrame(updateGame);
+}
+
+// 🔥 Typing Input ka logic
+input.addEventListener('input', () => {
+    if (!gameRunning) return;
+
+    const val = input.value.trim().toLowerCase(); // Player ne jo type kiya
+
+    for (let i = 0; i < fallingWords.length; i++) {
+        let wordObj = fallingWords[i];
+        let word = wordObj.text;
+
+        // Highlight karne ka logic: Agar shuruati letters match ho rahe hain
+        if (word.startsWith(val)) {
+            let matched = word.substring(0, val.length); // Jitna match hua
+            let remaining = word.substring(val.length);  // Baqi bacha hua
+            // Match hue hisse ko 'highlight' class (yellow/bold) mein dikhana
+            wordObj.element.innerHTML = `<span class="highlight">${matched}</span>${remaining}`;
+        } else {
+            wordObj.element.innerText = word; // Match na hone par normal dikhao
+        }
+
+        // Agar pura word sahi type ho gaya
+        if (word === val) {
+            container.removeChild(wordObj.element); // Word ko screen se delete karo
+            fallingWords.splice(i, 1);              // List se delete karo
+            input.value = "";                       // Input box khali karo
+            score += 10;                            // Score mein 10 points joro
+            scoreElement.innerText = score;         // Score update karo
+
+            // Har 50 points par game ki raftar (speed) thodi badha do
+            if (score % 50 === 0) gameSpeed += 0.2;
+            break; // Loop se bahar niklo kyunke word mil gaya hai
+        }
+    }
+});
+
+// ⏱️ Timer chalane ka logic
+const timer = setInterval(() => {
+    if (!gameRunning) return;
+
+    timeLeft--; // Har second 1 minus karna
+    timeElement.innerText = timeLeft;
+
+    // Jab waqt khatam ho jaye
+    if (timeLeft <= 0) {
+        gameRunning = false; // Game rok do
+        clearInterval(timer); // Timer band kar do
+        alert("⏱️ Time Over! Final Score: " + score); // Result dikhao
+        location.reload(); // Page refresh karke game restart karo
+    }
+}, 1000); // 1000ms = 1 second
+
+// Game Start karne ke liye calls
+setInterval(createWord, 2000); // Har 2 second mein naya word banao
+updateGame(); // Animation loop shuru karo
+</script>
+</body>
+</html>
